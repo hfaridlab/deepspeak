@@ -1,1 +1,1 @@
-# deepspeak-neurips
+# DeepSpeak
