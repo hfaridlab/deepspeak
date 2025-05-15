@@ -1,0 +1,59 @@
+.root {
+  display: grid;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  transform: translateX(-50%);
+  border-radius: 16px;
+  background-color: rgba(var(--mui-palette-common-backgroundChannel) / 90%);
+  backdrop-filter: blur(4px);
+
+  :global(.MuiToggleButton-root) {
+    display: grid;
+    justify-items: center;
+    row-gap: 10px;
+    border: none;
+    border-radius: 16px;
+    padding: 18px 16px 16px;
+    line-height: 16px;
+    color: var(--mui-palette-text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+
+    svg {
+      box-sizing: content-box;
+      border-radius: 8px;
+      box-shadow: 0 0 0 1px var(--mui-palette-divide);
+      padding: 4px;
+      width: 32px;
+      height: 20px;
+      overflow: visible;
+    }
+  }
+
+  :global(.MuiToggleButton-root:hover) {
+    svg {
+      filter: brightness(1.5);
+    }
+  }
+
+  :global(.MuiToggleButton-root.Mui-selected) {
+    background-color: transparent;
+    color: var(--mui-palette-text-primary);
+
+    &:hover {
+      background-color: rgba(
+        var(--mui-palette-text-primaryChannel) /
+          var(--mui-palette-action-hoverOpacity)
+      );
+    }
+
+    svg {
+      box-shadow: 0 0 0 2px
+        rgba(var(--mui-palette-common-backgroundChannel) / 70%);
+      filter: invert(1) brightness(1.175);
+    }
+  }
+}

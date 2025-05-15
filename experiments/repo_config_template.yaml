@@ -1,0 +1,100 @@
+  audio_only: "/path/to/extracted/audios/from/deespeak"
+  models:
+    aasist: "/audio_experiments/models/from_scratch/AASIST_deepspeak_from_scratch.pth"
+  asvspoof:
+    protocol_dir: "/path/to/assist/repo/aasist/LA/ASVspoof2019_LA_cm_protocols"
+    base_dir: "/path/to/assist/repo/aasist/LA"
+    output_csv: "/metadata/asvspoof_metadata.csv"
+  timit_elevenlabs:
+    base_dir: "/path/to/TIMIT_ElevenLabs"
+    output_csv: "/metadata/TIMIT_elevenlabs_metadata.csv"
+  classifiers:
+    asvspoof:
+      embedding_dir: "/embeddings/asvspoof"
+      results_dir: "/audio_experiments/results"
+      model_output_dir: "/audio_experiments/models/embeddings_lr_rf"
+    deepspeak:
+      embedding_dir: "/embeddings"
+      results_dir: "/audio_experiments/results"
+      model_output_dir: "/audio_experiments/models/embeddings_lr_rf"
+    timitel:
+      embedding_dir: "/embeddings/timitel"
+      results_dir: "/audio_experiments/results"
+      model_output_dir: "/audio_experiments/models/embeddings_lr_rf"
+  cosine_pairs:
+    embeddings_dir: "/embeddings/deepspeak"
+    metadata_dir: "/metadata"
+    output_dir: "/embeddings/similarity_matches"
+  embeddings:
+    asvspoof:
+      metadata_path: "/metadata/asvspoof_metadata.csv"
+      output_dir: "/embeddings/asvspoof"
+    timitel:
+      metadata_path: "/metadata/TIMIT_elevenlabs_metadata.csv"
+      output_dir: "/embeddings/TIMIT_ElevenLabs"
+    deepspeak:
+      v1_1_metadata_path: "/metadata/deepspeak_v1_1_metadata.csv"
+      v2_metadata_path: "/metadata/deepspeak_v2_metadata.csv"
+      output_dir: "/embeddings"
+  classifiers_cross_testing:
+    model_dir: "/audio_experiments/models/embeddings_lr_rf"
+    embedding_base_dir: "/embeddings"
+    results_dir: "/audio_experiments/results"
+    results_csv: "cross_dataset_evaluation_results.csv"
+  pretrained_experiments:
+    models:
+      aasist: "/audio_experiments/configs/AASIST.conf"
+      rawnet: "/audio_experiments/configs/RawNet2_baseline.conf"
+      rawgat: "/audio_experiments/configs/RawGATST_baseline.conf"
+    metadata:
+      v1_1: "/path/to/deepspeak_v1_1_metadata.csv"
+      v2: "/path/to/deepspeak_v2_metadata.csv"
+    output_dir: "/audio_experiments/results/pretrained_audio_models"
+  pretrained_cross_testing:
+    models:
+      aasist:
+        config: "/audio_experiments/configs/AASIST.conf"
+        class_name: "AASIST"
+      rawnet2:
+        config: "/audio_experiments/configs/RawNet2_baseline.conf"
+        class_name: "RawNet2Spoof"
+      rawgat:
+        config: "/audio_experiments/configs/RawGATST_baseline.conf"
+        class_name: "RawNetGatSpoofST"
+    metadata:
+      deepspeak_v1_1: "/metadata/deepspeak_v1_1_metadata.csv"
+      deepspeak_v2: "/metadata/deepspeak_v2_metadata.csv"
+      timit_elevenlabs: "/metadata/TIMIT_elevenlabs_metadata.csv"
+      asvspoof: "/metadata/asvspoof_metadata.csv"
+    models_dir: "/audio_experiments/models"
+    output_dir: "/audio_experiments/results"
+    output_file: "pretrained_models_cross_testing_results.csv"
+  scratch_cross_testing:
+    models:
+      aasist:
+        config: "/audio_experiments/configs/AASIST_scratch_deepspeak.conf"
+        class_name: "AASIST"
+      rawnet2:
+        config: "/audio_experiments/configs/RawNet2_baseline_scratch_deepspeak.conf"
+        class_name: "RawNet2Spoof"
+      rawgat:
+        config: "/audio_experiments/configs/RawGATST_baseline_scratch_deepspeak.conf"
+        class_name: "RawNetGatSpoofST"
+    metadata:
+      deepspeak_v1_1: "/metadata/deepspeak_v1_1_metadata.csv"
+      deepspeak_v2: "/metadata/deepspeak_v2_metadata.csv"
+      timit_elevenlabs: "/metadata/TIMIT_elevenlabs_metadata.csv"
+      asvspoof: "/metadata/asvspoof_metadata.csv"
+    models_dir: "/audio_experiments/models"
+    output_dir: "/audio_experiments/results"
+    output_file: "scratch_models_cross_testing_results.csv"
+  model_training:
+    models_dir: "/audio_experiments/models"
+    configs:
+      aasist: "/audio_experiments/configs/AASIST_scratch_deepspeak.conf"
+      rawnet2: "/audio_experiments/configs/RawNet2_baseline_scratch_deepspeak.conf"
+      rawgat: "/audio_experiments/configs/RawGATST_baseline_scratch_deepspeak.conf"
+    output_dir: "/audio_experiments/models/from_scratch"
+    metadata:
+      v1_1: "/metadata/deepspeak_v1_1_metadata.csv"
+      v2: "/metadata/deepspeak_v2_metadata.csv"

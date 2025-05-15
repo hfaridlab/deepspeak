@@ -1,0 +1,92 @@
+.root {
+  display: grid;
+  position: fixed;
+  inset: 0;
+  grid-template-rows: auto auto;
+  grid-template-columns: minmax(0, auto);
+  align-content: space-between;
+  justify-content: center;
+  row-gap: 24px;
+  padding: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1;
+  background-color: white;
+  color: black;
+
+  &.placeholder {
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+}
+
+.main {
+  position: relative;
+  justify-self: center;
+  border: 1px solid rgba(var(--mui-palette-dividerChannel) / 8%);
+  border-radius: 12px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  line-height: 0;
+
+  .placeholder & {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.videoContainer {
+  width: 80%; /* Adjust the width as needed */
+  max-width: 400px; /* Set a maximum width if needed */
+  margin: 0 auto; /* Center the video container */
+  margin-top: 10px;
+}
+
+.recordButton {
+  position: absolute;
+  top: 85%; /* Adjust the vertical position as needed */
+  right: 40px; /* Right-align with a margin of 10px */
+  transform: translateY(-50%) scale(0.75); /* Vertically center and scale */
+}
+
+.textAboveVideo {
+  text-align: left;
+  margin: 0; /* Remove default margins for the paragraph */
+  color: #000; /* Adjust the text color as needed */
+  font-size: 16px; /* Adjust the font size as needed */
+  margin-bottom: 10px;
+}  
+
+.textAboveVideo p strong {
+  font-weight: bold;
+  font-size: 1.2em; /* Adjust the font size as needed */
+  /* Add any other styles for the title */
+}
+
+.roundBullets {
+  list-style-type: disc; /* Use disc bullets (you can change it to 'circle' or 'square' if needed) */
+  padding-left: 20px; /* Add padding to align text properly */
+  color: #000; /* Set the desired text color to black */
+  /* ... other styles ... */
+}
+
+.roundBullets li {
+  margin-bottom: 5px; /* Add margin between list items */
+}
+
+/* App.module.css */
+
+.deviceSelectors {
+  display: flex;
+  width: 80%;
+  max-width: 400px; /* Set a maximum width if needed */
+  margin: 0 auto;
+  background-color: #000000; /* Temporary background color for visibility */
+  padding: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 20px;
+}
+
+/* You can also target specific child elements if needed */
+.deviceSelector select {
+  color: rgb(158, 84, 84); /* Color for the text inside the select box */
+  background-color: #333; /* Background color of the select box */
+}

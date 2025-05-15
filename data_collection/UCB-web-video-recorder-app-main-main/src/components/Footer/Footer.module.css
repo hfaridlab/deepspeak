@@ -1,0 +1,16 @@
+.root {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 8px;
+  background-color: #a21111; /* Temporary background color for testing */
+  min-height: 50px; /* Temporary minimum height for testing */
+}
+
+
+.devices {
+  display: grid;
+  grid-auto-flow: column;
+  justify-self: end;
+  column-gap: 8px;
+}

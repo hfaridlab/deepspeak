@@ -1,0 +1,47 @@
+.root {
+  display: grid;
+  position: fixed;
+  inset: 0;
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.camera {
+  grid-area: 1/1;
+  transform: scaleX(-1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.controls {
+  display: grid;
+  position: relative;
+  grid-area: 1/1;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  gap: 8px;
+  align-content: end;
+  align-items: center;
+  background-image: linear-gradient(
+    to top,
+    rgb(0 0 0 / 40%),
+    rgb(0 0 0 / 0%) 120px
+  );
+  padding: 16px;
+  animation: 500ms ease fadeIn;
+}
+
+.duration:global(.MuiTypography-root) {
+  font-family: 'SF Mono', monospace;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
