@@ -1,0 +1,11 @@
+opencv-python
+torch
+clip-by-openai
+numpy
+mediapipe
+Pillow
+scipy
+ffmpeg-python
+librosa
+pandas
+tqdm
